@@ -26,7 +26,7 @@ public class Image2Map implements ModInitializer {
         System.out.println("Loading Image2Map...");
 
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-            dispatcher.register(CommandManager.literal("mapcreate").requires(source -> source.hasPermissionLevel(2))
+            dispatcher.register(CommandManager.literal("mapcreate")
                     .then(CommandManager.argument("path", StringArgumentType.string()).executes(context -> {
                         ServerCommandSource source = context.getSource();
                         Vec3d pos = source.getPosition();
